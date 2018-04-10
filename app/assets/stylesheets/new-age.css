@@ -169,14 +169,15 @@ header.masthead .header-content h1 {
   font-size: 30px;
 }
 
-header.masthead .device-container {
-  max-width: 325px;
-  margin-right: auto;
-  margin-left: auto;
+header.masthead .header-content h2 {
+  font-size: 20px;
 }
 
-header.masthead .device-container .screen img {
-  border-radius: 3px;
+header.masthead .paper-container {
+  text-align: center;
+}
+header.masthead .paper-container img {
+  max-height: 373px;
 }
 
 @media (min-width: 992px) {
@@ -193,14 +194,14 @@ header.masthead .device-container .screen img {
   header.masthead .header-content h1 {
     font-size: 50px;
   }
-  header.masthead .device-container {
-    max-width: 325px;
+  header.masthead .header-content h2 {
+    font-size: 40px;
   }
-
-  header.masthead .paper {
-    width: 80%;
-    height: 80%;
-
+  header.masthead .paper-container {
+    text-align: center;
+  }
+  header.masthead .paper-container img {
+    max-height: 373px;
   }
 }
 
