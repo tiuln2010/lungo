@@ -11,6 +11,8 @@
 // about supported directives.
 
 //= require jquery.min
-//= bootstrap.bundle.min
+//= require jquery.easing.min
+//= require bootstrap.bundle.min
+//= require new-age
 //= require turbolinks
 //= require_tree .
