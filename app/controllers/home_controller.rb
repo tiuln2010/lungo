@@ -2,11 +2,13 @@ class HomeController < ApplicationController
     def index
     end
 
-    def sendMail
-        @sender = params[:sender]
+    
+    
+    def mail 
+        @sender = params[:sender?]
         @content = params[:content]
         @email = 'tiuln2010@gmail.com'
-
+        
         @msg = 'Sender :' + String(@sender) + '  Content :' + String(@content)
 
         require 'mailgun'
@@ -28,6 +30,7 @@ class HomeController < ApplicationController
         # message = result['message']
         
         redirect_to action: 'index'
+    
+        end
     end
-
 end

@@ -6,6 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -211,38 +213,20 @@
     <section class="contact bg-primary" id="contact">
       <div class="container">
         <h2>Contact</h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <%= form_tag("/mail", method: "POST") do %>
             <div class="form-container">
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input name="sender" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email or phone number">
+                <input name="sender" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email or phone number" required/>
                 <small id="emailHelp" class="form-text text-muted">Please write at least one for reply. We'll never share your email, phone number with anyone else. </small>
               </div>
               <div class="form-group">
                 <label for="emailArea">Ask us whatever you want</label>
-                <textarea name="content" class="form-control" id="emailArea" rows="15" placeholder="Type your requests"></textarea>
+                <textarea name="content" class="form-control" id="emailArea" rows="15" placeholder="Type your requests" required></textarea>
               </div>
-              <button type="submit" class="btn btn-danger" id="submitBtn" data-toggle="popover" data-placement="top" data-content="Email has been successfully sent!" data-placement="button" title="Check your E-mail address for quick reply" onclick="alertpopup()">Submit</button>
+              <button type="submit" class="btn btn-danger" id="submitBtn" data-toggle="popover" data-placement="top" data-content="Email has been successfully sent!" data-placement="button" title="Check your E-mail address for quick reply" onclick='swal("Good job!", "You clicked the button!", "success");' >Submit</button>
             </div>
           <% end %>   
-=======
-=======
->>>>>>> parent of dd81014... resizing
-        <form>
-          <div class="form-group">
-            <label for="email">Email address or phone number</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email or phone number">
-            <small id="emailHelp" class="form-text text-muted">Please write at least one for reply. We'll never share your email, phone number with anyone else. </small>
-          </div>
-          <div class="form-group">
-            <label for="emailArea">Ask us whatever you want</label>
-            <textarea class="form-control" id="emailArea" rows="10" placeholder="Type your requests"></textarea>
-          </div>
-           <button type="submit" class="btn btn-danger" id="submitBtn" data-toggle="tooltip" data-placement="botton" title="Check your E-mail address for quick reply">Submit</button>
-        </form>
->>>>>>> parent of dd81014... resizing
       </div>
     </section>
 

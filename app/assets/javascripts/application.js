@@ -16,3 +16,27 @@
 //= require new-age
 //= require turbolinks
 //= require_tree .
+
+            var XMLHttpRequestObject = false;
+
+            if (window.XMLHttpRequest) {
+                XMLHttpRequestObject = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            function sendMail(dataSource, divID)
+            {
+                if (XMLHttpRequestObject) {
+                    XMLHttpRequestObject.open("GET", dataSource);
+
+                    XMLHttpRequestObject.onreadystatechange = function()
+                    {
+                        if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) {
+                                obj.innerHTML = XMLHttpRequestObject.response;
+                        }
+                    }
+
+                    XMLHttpRequestObject.send(null);
+                }
+            }
