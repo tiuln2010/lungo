@@ -213,7 +213,7 @@
     <section class="contact bg-primary" id="contact">
       <div class="container">
         <h2>Contact</h2>
-          <%= form_tag("/mail", method: "POST") do %>
+          <%= form_tag("/", method: "GET") do %>
             <div class="form-container">
               <div class="form-group">
                 <label for="email">Email address</label>
@@ -224,7 +224,7 @@
                 <label for="emailArea">Ask us whatever you want</label>
                 <textarea name="content" class="form-control" id="emailArea" rows="15" placeholder="Type your requests" required></textarea>
               </div>
-              <button type="submit" class="btn btn-danger" id="submitBtn" data-toggle="popover" data-placement="top" data-content="Email has been successfully sent!" data-placement="button" title="Check your E-mail address for quick reply" onclick='swal("Good job!", "You clicked the button!", "success");' >Submit</button>
+              <button type="submit" class="btn btn-danger" id="submitBtn" data-toggle="popover" data-placement="top" data-content="Email has been successfully sent!" data-placement="button" title="Check your E-mail address for quick reply">Submit</button>
             </div>
           <% end %>   
       </div>

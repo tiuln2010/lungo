@@ -2,14 +2,12 @@ class HomeController < ApplicationController
     def index
     end
 
-    
-    
     def mail 
-        @sender = params[:sender?]
-        @content = params[:content]
-        @email = 'tiuln2010@gmail.com'
+        sender = params[:sender]
+        content = params[:content]
+        email = 'tiuln2010@gmail.com'
         
-        @msg = 'Sender :' + String(@sender) + '  Content :' + String(@content)
+        msg = 'Sender :' + String(sender) + '  Content :' + String(content)
 
         require 'mailgun'
 
@@ -18,19 +16,25 @@ class HomeController < ApplicationController
         
         # Define your message parameters
         message_params =  { from: 'cus@sandboxbfa3f691412e407f98d1aafa37c7ed3c.mailgun.org',
-                            to: @email,
+                            to: email,
                             subject: 'Mail from customer!',
-                            text: @msg 
+                            text: msg 
                         }
         
         # Send your message through the client
-        # result = mg_client.send_message('sandboxbfa3f691412e407f98d1aafa37c7ed3c.mailgun.org', message_params).to_h!
-        
-        # message_id = result['id']
-        # message = result['message']
-        
-        redirect_to action: 'index'
-    
+        result = mg_client.send_message('sandboxbfa3f691412e407f98d1aafa37c7ed3c.mailgun.org', message_params).to_h!
+        #message_id = result['id']
+        message = result['message']
+
+        if message == "Queued. Thank you."
+            respond_to do |format|
+                format.json { render :json => '{"res" : "success"}'}
+            end
+        else
+            respond_to do |format|
+                format.html
+                format.json { render :json => '{"res" : "fail"}'}
+            end
         end
     end
 end
